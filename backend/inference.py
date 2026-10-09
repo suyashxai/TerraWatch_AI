@@ -123,7 +123,12 @@ def _build_model_terratorch(device: torch.device, weights_path: Path):
     )
 
     logger.info("[TerraTorch] Loading weights from %s on %s", weights_path, device)
-    checkpoint = torch.load(str(weights_path), map_location=device, weights_only=False)
+    checkpoint = torch.load(
+     str(weights_path),
+     map_location="cpu",
+     weights_only=False,
+     mmap=True,
+   )
     state_dict = checkpoint.get("state_dict", checkpoint)
 
     # Strip Lightning prefix 'model.' if present
