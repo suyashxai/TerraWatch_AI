@@ -237,7 +237,9 @@ uploaded_file = st.file_uploader(
     "Select GeoTIFF file",
     type=["tif", "tiff"],
     help="Multi-band HLS GeoTIFF with exactly 6 spectral bands.",
+    max_upload_size=500
 )
+
 
 _valid_upload = False
 
