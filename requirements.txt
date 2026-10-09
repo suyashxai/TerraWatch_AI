@@ -11,10 +11,8 @@ torchvision>=0.15.0
 # timm — used by the terratorch-free fallback backbone
 timm>=0.9.0
 
-# TerraTorch — official IBM-NASA model factory for Prithvi
-# Install if available (optional but strongly recommended for full accuracy).
-# Comment out if your environment cannot install it (e.g. Streamlit Cloud CPU).
-# terratorch>=0.1.0
+# TerraTorch — required for the official Prithvi segmentation architecture.
+terratorch>=0.1.0
 
 # Hugging Face ecosystem (model weights download)
 huggingface_hub>=0.22.0
