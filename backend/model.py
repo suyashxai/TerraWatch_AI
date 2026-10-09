@@ -141,18 +141,8 @@ def run_pipeline(tiff_path: str, output_dir: str = "outputs") -> Dict[str, Any]:
 
     # Ensure mask is always (H, W) uint8 — guard against unexpected model outputs
     if isinstance(mask, np.ndarray):
-        mask = np.squeeze(mask)
-
-        if mask.ndim != 2:
-            raise RuntimeError(
-                f"Expected a 2D segmentation mask, got shape {mask.shape}."
-            )
-
-        if not np.isin(mask, [0, 1]).all():
-            raise RuntimeError(
-                "The segmentation mask contains values other than 0 and 1."
-            )
-
+        if mask.ndim > 2:
+            mask = mask.squeeze()
         mask = mask.astype(np.uint8)
     else:
         raise RuntimeError(
