@@ -1,0 +1,64 @@
+﻿# TerraWatch AI — .gitignore
+
+# Model weights (large binary files — do NOT commit)
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.safetensors
+!models/README.md
+!models/burn_scars_config.yaml
+
+# Data / satellite imagery (large files)
+data/input/
+data/ground_truth/
+*.tif
+*.tiff
+*.hdf
+*.h5
+*.nc
+
+# Model outputs
+outputs/
+!outputs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Streamlit cache
+.streamlit/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log

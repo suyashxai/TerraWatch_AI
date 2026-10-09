@@ -1,0 +1,38 @@
+# TerraWatch AI — Python dependencies
+# Install: pip install -r requirements.txt
+#
+# GPU (CUDA) users: install PyTorch first from https://pytorch.org/get-started/locally/
+# e.g.:  pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+
+# ── Core ML ──────────────────────────────────────────────────────────────────
+torch>=2.0.0
+torchvision>=0.15.0
+
+# timm — used by the terratorch-free fallback backbone
+timm>=0.9.0
+
+# TerraTorch — official IBM-NASA model factory for Prithvi
+# Install if available (optional but strongly recommended for full accuracy).
+# Comment out if your environment cannot install it (e.g. Streamlit Cloud CPU).
+# terratorch>=0.1.0
+
+# Hugging Face ecosystem (model weights download)
+huggingface_hub>=0.22.0
+transformers>=4.40.0
+
+# OmegaConf — configuration management (used by TerraTorch)
+omegaconf>=2.3.0
+
+# ── Geospatial I/O ────────────────────────────────────────────────────────────
+rasterio>=1.3.0
+numpy>=1.24.0
+
+# pyproj — CRS / coordinate transformation (used by utils.bounds_to_latlon)
+pyproj>=3.3.0
+
+# ── Image processing / visualisation ─────────────────────────────────────────
+imageio>=2.31.0
+Pillow>=10.0.0
+
+# ── Streamlit dashboard ───────────────────────────────────────────────────────
+streamlit>=1.33.0
